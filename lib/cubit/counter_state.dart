@@ -1,0 +1,3 @@
+
+class CounterAIncrementState{}
+class CounterBIncrementState{}
