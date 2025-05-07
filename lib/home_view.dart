@@ -1,16 +1,8 @@
 import 'package:basket_ball_app10/custom_button.dart';
 import 'package:flutter/material.dart';
 
-class HomeView extends StatefulWidget {
+class HomeView extends StatelessWidget {
   const HomeView({super.key});
-
-  @override
-  State<HomeView> createState() => _HomeViewState();
-}
-
-class _HomeViewState extends State<HomeView> {
-  int resultA = 0;
-  int resultB = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -30,30 +22,12 @@ class _HomeViewState extends State<HomeView> {
                 Column(
                   children: [
                     Text("Team A", style: TextStyle(fontSize: 45)),
-                    Text(resultA.toString(), style: TextStyle(fontSize: 70)),
-                    CustomButton(
-                      message: "Add 1 Point",
-                      ontap: () {
-                        resultA++;
-                        setState(() {});
-                      },
-                    ),
+                    Text("0", style: TextStyle(fontSize: 70)),
+                    CustomButton(message: "Add 1 Point"),
                     SizedBox(height: 16),
-                    CustomButton(
-                      message: "Add 2 Point",
-                      ontap: () {
-                        resultA += 2;
-                        setState(() {});
-                      },
-                    ),
+                    CustomButton(message: "Add 2 Point"),
                     SizedBox(height: 16),
-                    CustomButton(
-                      message: "Add 3 Point",
-                      ontap: () {
-                        resultA += 3;
-                        setState(() {});
-                      },
-                    ),
+                    CustomButton(message: "Add 3 Point"),
                   ],
                 ),
                 SizedBox(
@@ -63,42 +37,17 @@ class _HomeViewState extends State<HomeView> {
                 Column(
                   children: [
                     Text("Team B", style: TextStyle(fontSize: 45)),
-                    Text(resultB.toString(), style: TextStyle(fontSize: 70)),
-                    CustomButton(
-                      message: "Add 1 Point",
-                      ontap: () {
-                        resultB++;
-                        setState(() {});
-                      },
-                    ),
+                    Text("0", style: TextStyle(fontSize: 70)),
+                    CustomButton(message: "Add 1 Point"),
                     SizedBox(height: 16),
-                    CustomButton(
-                      message: "Add 2 Point",
-                      ontap: () {
-                        resultB += 2;
-                        setState(() {});
-                      },
-                    ),
+                    CustomButton(message: "Add 2 Point"),
                     SizedBox(height: 16),
-                    CustomButton(
-                      message: "Add 3 Point",
-                      ontap: () {
-                        resultB += 3;
-                        setState(() {});
-                      },
-                    ),
+                    CustomButton(message: "Add 3 Point"),
                   ],
                 ),
               ],
             ),
-            CustomButton(
-              message: "Reset",
-              ontap: () {
-                resultA = 0;
-                resultB = 0;
-                setState(() {});
-              },
-            ),
+            CustomButton(message: "Reset"),
           ],
         ),
       ),
