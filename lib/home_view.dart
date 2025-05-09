@@ -9,10 +9,8 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<CounterCubit,CounterState>(
-      listener: (context, state) {
-        
-      },
+    return BlocConsumer<CounterCubit, CounterState>(
+      listener: (context, state) {},
       builder: (context, state) {
         return Scaffold(
           appBar: AppBar(
@@ -30,12 +28,36 @@ class HomeView extends StatelessWidget {
                     Column(
                       children: [
                         Text("Team A", style: TextStyle(fontSize: 45)),
-                        Text("0", style: TextStyle(fontSize: 70)),
-                        CustomButton(message: "Add 1 Point"),
+                        Text(
+                          "${BlocProvider.of<CounterCubit>(context).resultA}",
+                          style: TextStyle(fontSize: 70),
+                        ),
+                        CustomButton(
+                          message: "Add 1 Point",
+                          ontap: () {
+                            BlocProvider.of<CounterCubit>(
+                              context,
+                            ).TeamIncrement(team: "A", buttonNumber: 1);
+                          },
+                        ),
                         SizedBox(height: 16),
-                        CustomButton(message: "Add 2 Point"),
+                        CustomButton(
+                          message: "Add 2 Point",
+                          ontap: () {
+                            BlocProvider.of<CounterCubit>(
+                              context,
+                            ).TeamIncrement(team: "A", buttonNumber: 2);
+                          },
+                        ),
                         SizedBox(height: 16),
-                        CustomButton(message: "Add 3 Point"),
+                        CustomButton(
+                          message: "Add 3 Point",
+                          ontap: () {
+                            BlocProvider.of<CounterCubit>(
+                              context,
+                            ).TeamIncrement(team: "A", buttonNumber: 3);
+                          },
+                        ),
                       ],
                     ),
                     SizedBox(
@@ -45,17 +67,48 @@ class HomeView extends StatelessWidget {
                     Column(
                       children: [
                         Text("Team B", style: TextStyle(fontSize: 45)),
-                        Text("0", style: TextStyle(fontSize: 70)),
-                        CustomButton(message: "Add 1 Point"),
+                        Text(
+                          "${BlocProvider.of<CounterCubit>(context).resultB}",
+                          style: TextStyle(fontSize: 70),
+                        ),
+                        CustomButton(
+                          message: "Add 1 Point",
+                          ontap: () {
+                            BlocProvider.of<CounterCubit>(
+                              context,
+                            ).TeamIncrement(team: "B", buttonNumber: 1);
+                          },
+                        ),
                         SizedBox(height: 16),
-                        CustomButton(message: "Add 2 Point"),
+                        CustomButton(
+                          message: "Add 2 Point",
+                          ontap: () {
+                            BlocProvider.of<CounterCubit>(
+                              context,
+                            ).TeamIncrement(team: "B", buttonNumber: 2);
+                          },
+                        ),
                         SizedBox(height: 16),
-                        CustomButton(message: "Add 3 Point"),
+                        CustomButton(
+                          message: "Add 3 Point",
+                          ontap: () {
+                            BlocProvider.of<CounterCubit>(
+                              context,
+                            ).TeamIncrement(team: "B", buttonNumber: 3);
+                          },
+                        ),
                       ],
                     ),
                   ],
                 ),
-                CustomButton(message: "Reset"),
+                CustomButton(
+                  message: "Reset",
+                  ontap: () {
+                    BlocProvider.of<CounterCubit>(
+                      context,
+                    ).TeamIncrement(team: "0", buttonNumber: 1);
+                  },
+                ),
               ],
             ),
           ),
